@@ -1,17 +1,12 @@
-<script setup>
+<script setup >
+import MoyTab from '@/components/MoyTab.vue'
 </script>
 
 <template>
-    <div class="container">
-        <h1 class="blink">
-            Tap anywhere to start
-        </h1>
-    </div>
+    <MoyTab/>
 </template>
 
-
-<style scoped>
-
+<style scoped></style>
 @keyframes blink {
     0% {
         opacity: 1;
@@ -25,10 +20,6 @@
         opacity: 1;
     }
 }
-
-
-
-
 
 h1.blink {
     animation: blink 1s infinite;
@@ -54,3 +45,4 @@ h1.blink {
 }
 
 </style>
+
