@@ -1,5 +1,4 @@
 <script setup>
-
 </script>
 
 <template>
@@ -53,11 +52,5 @@ h1.blink {
     color: #fff;
     font-family: "Helvetica Neue", Helvetica, "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif
 }
-
-
-
- 
-
-
 
 </style>
