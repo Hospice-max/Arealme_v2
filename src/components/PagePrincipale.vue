@@ -66,7 +66,19 @@
 </template>
 
 <script setup>
-import timeComponent from "../Components/timeComponent.vue";
+import timeComponent from "@/components/timeComponent.vue";
+
+
+const number = [
+    {digit:'3', value:3},
+    {digit:'5', value:5},
+    {digit:'10', value:10},
+    {digit:'15', value:15},
+    {digit:'20', value:20},
+    {digit:'💪30', value:30},
+    {digit:'😂100', value:100},
+    ]
+const taked = ref(3);
 </script>
 
 <style scoped>

@@ -1,12 +1,13 @@
 
 <template>
-  <div></div>
- <router-view></router-view>
+  <div>
+    <AcceuilComponent></AcceuilComponent>
+  </div>
 
 </template>
 
 <script setup>
-import AcceuilComponent from "@/Components/AcceuilComponent.vue";
-import timeComponent from "./Components/timeComponent.vue"
+import AcceuilComponent from "./components/PagePrincipale.vue";
+import timeComponent from "./components/timeComponent.vue";
 </script>
 
