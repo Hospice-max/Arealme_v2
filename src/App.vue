@@ -5,7 +5,7 @@
 
 <script setup>
 import AcceuilComponent from "@/Components/AcceuilComponent.vue";
-
+import timeComponent from "./Components/timeComponent.vue"
 </script>
 
 <style scoped>

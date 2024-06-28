@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="high_container">
     <nav>
       <div class="container">
         <router-link to="#"
@@ -19,6 +19,9 @@
           <span class="moi">MOI </span>
         </router-link>
         <router-link to="/" class="abilité">Test d'aptitude</router-link>
+        <router-link>
+          <button class="btn2" @click="animate"><time-component /></button>
+        </router-link>
       </div>
     </nav>
     <div class="container2">
@@ -63,9 +66,14 @@
 </template>
 
 <script setup>
+import timeComponent from "../Components/timeComponent.vue";
 </script>
 
 <style scoped>
+.high_container{
+   animation-name: animate;
+  animation-duration: 5s;
+}
 nav {
   box-sizing: border-box;
   position: relative;
@@ -117,6 +125,7 @@ nav {
   text-transform: uppercase;
   color: white;
   font-size: 18px;
+  transition: 0.2s;
 }
 .container2 h1 {
   position: absolute;
@@ -160,19 +169,22 @@ nav {
   font-weight: bold;
   opacity: 0.4;
 }
-.container-button p{
+.container-button p {
   background-color: rgba(255, 0, 0, 0.555);
   font-size: 25px;
 }
-.btn:hover{
-background-color: #0078e7;
-font-size: 20px;
+.btn:hover {
+  background-color: #0078e7;
+  font-size: 20px;
 }
 button {
   background-color: white;
   font-size: 15px;
   font-weight: bold;
   cursor: pointer;
+   transition: 0.2s;
+   padding-inline: 0.8rem;
+   padding-block: 0.5rem;
 }
 
 .par {
@@ -222,5 +234,20 @@ button {
 .start:hover {
   background-color: #0078e7;
   font-size: 22px;
+}
+@keyframes animate {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+}
+
+.btn2 {
+  margin-left: 650px;
+  border: none;
+  border: 1px solid #a1b9cf;
+  border-radius: 20px;
+  padding: 9px;
+  background-color: #9b9898;
 }
 </style>
