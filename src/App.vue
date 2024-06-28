@@ -1,19 +1,22 @@
 <script setup>
-
+import gameComponent from '@/component/gameComponent.vue';
 </script>
 
 <template>
     <div class="container">
-        <h1 class="blink">
+        <!-- <h1 class="blink">
             Tap anywhere to start
-        </h1>
+        </h1> -->
+        <gameComponent />
     </div>
+
+<router-view/>
 </template>
 
 
 <style scoped>
 
-@keyframes blink {
+/* @keyframes blink {
     0% {
         opacity: 1;
     }
@@ -25,17 +28,17 @@
     100% {
         opacity: 1;
     }
-}
+} */
 
 
 
 
 
-h1.blink {
+/* h1.blink {
     animation: blink 1s infinite;
     /* Change 1s to adjust blinking speed */
 
-}
+
 
 .container {
     position: absolute;
