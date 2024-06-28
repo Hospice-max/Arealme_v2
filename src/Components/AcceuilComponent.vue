@@ -1,5 +1,5 @@
 <template>
-  <div class="high_container">
+  <div :class="react">
     <nav>
       <div class="container">
         <router-link to="#"
@@ -19,9 +19,20 @@
           <span class="moi">MOI </span>
         </router-link>
         <router-link to="/" class="abilité">Test d'aptitude</router-link>
-        <router-link>
-          <button class="btn2" @click="animate"><time-component /></button>
-        </router-link>
+        <time-component />
+        <button class="btn3" @click="startAnimation()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="10px"
+            viewBox="0 -960 960 960"
+            width="30px"
+            fill="#5f6368"
+          >
+            <path
+              d="M480.28-96Q401-96 331-126t-122.5-82.5Q156-261 126-330.96t-30-149.5Q96-560 126-629.5q30-69.5 82.5-122T330.96-834q69.96-30 149.5-30t149.04 30q69.5 30 122 82.5T834-629.28q30 69.73 30 149Q864-401 834-331t-82.5 122.5Q699-156 629.28-126q-69.73 30-149 30ZM516-170q117-14 196.5-101.72T792-480q0-120.56-79.5-208.28T516-790v620Z"
+            />
+          </svg>
+        </button>
       </div>
     </nav>
     <div class="container2">
@@ -66,15 +77,39 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
 import timeComponent from "../Components/timeComponent.vue";
+let react = ref("");
+
+function startAnimation() {
+  // Réinitialisation de react.value à une nouvelle valeur pour chaque clic
+  react.value = "high_container";
+
+  // Utilisation de setTimeout pour déclencher l'animation
+  setTimeout(function () {
+    // Effectuer ici les étapes nécessaires pour l'animation
+    react.value = "0";
+    // Par exemple, vous pouvez ajouter ou modifier des classes CSS pour démarrer l'animation
+    // document.getElementById("elementId").classList.add("animate-class");
+  }, 1000); // Délai de 1000 millisecondes pour démarrer l'animation immédiatement
+}
 </script>
 
 <style scoped>
 .high_container {
   animation-name: animate;
+
   animation-duration: 2s;
   height: 1200px;
- 
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.btn3 {
+  border: none;
+  background-color: #9b989881;
+  text-align: center;
+  margin: auto;
 }
 nav {
   box-sizing: border-box;
@@ -90,7 +125,7 @@ nav {
   gap: 1.5%;
   max-width: 100%;
   width: 60%;
-  margin-left: 20%;
+  margin: auto;
   font-family: sans-serif, system-ui;
   font-size: 15px;
 }
@@ -107,18 +142,20 @@ nav {
 .zone {
   text-decoration: none;
   color: #3b3b3b;
-  margin-left: 10px;
+  text-align: center;
+  margin: auto;
 }
 .abilité {
   text-decoration: none;
   color: #9b9898;
-  margin-left: 60px;
+  text-align: center;
   font-size: 18px;
+  text-align: center;
+  margin: auto;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .start {
-  margin-left: 500px;
   background-color: #0078e7;
   padding: 15px;
   border: none;
@@ -160,11 +197,13 @@ nav {
   background-color: rgb(247, 247, 247);
   font-family: "Helvetica Neue", Helvetica, "Lucida Grande",
     "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+  box-sizing: border-box;
+  text-align: center;
 }
 .container-button {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   padding: 20px;
   justify-content: center;
   font-size: 15px;
@@ -216,6 +255,7 @@ button {
   font-size: 20px;
   line-height: 30px;
   margin-bottom: 15px;
+  text-align: justify;
 }
 .zone {
   color: black;
@@ -226,6 +266,8 @@ button {
   color: orangered;
   font-size: 18px;
   font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: center;
+  margin: auto;
 }
 .timer {
   position: absolute;
@@ -250,14 +292,5 @@ button {
   100% {
     background-color: green;
   }
-}
-
-.btn2 {
-  margin-left: 620px;
-  border: none;
-  border: 1px solid #a1b9cf;
-  border-radius: 20px;
-  padding: 5px;
-  background-color: #9b9898;
 }
 </style>
