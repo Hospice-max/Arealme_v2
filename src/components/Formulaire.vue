@@ -1,20 +1,3 @@
-<!-- <template>
-  <div class="container">
-     <div class="div">
-    <form action @submit.prevent="handleSubmit">
-    <span>
-      Félicitations ! Vous êtes classé No. 1 ! Veuillez entrer votre nom :
-    </span><br>
-    <input type="text"/><br>
-<div class="butt">
-    <button id="btn1">Confirmer</button>
-    <RouterLink  i="btn2" to="/">Annuler</RouterLink>
-    </div>
-  </form>
-  </div>
-</div>
-</template> -->
-
 
 <template>
     <div class="body">

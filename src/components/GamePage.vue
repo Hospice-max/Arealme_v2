@@ -115,7 +115,18 @@ onMounted(() => {
             :class="{ red: isRed, green: !isRed }"
             @click="task = !task">⏳</p>
         </div>
+
+        <Chrono 
+          v-else-if="change === false"
+          :childrenProps="childrenProps"
+          :currentTentative="idValue"
+          :gameRoundsData="gameTab"
+          @response="method"
+          @emitGameData="atGameEnd"/>
+          
     </div>
+
+    
 </template>
 
 <style scoped>
