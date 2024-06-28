@@ -1,13 +1,16 @@
-
-<template>
-  <div></div>
- <router-view></router-view>
-</template>
-
 <script setup>
-import AcceuilComponent from "@/Components/AcceuilComponent.vue";
-import timeComponent from "./Components/timeComponent.vue"
+import AcceuilComponent from "@/views/PagePrincipale.vue";
+
 </script>
 
+<template>
+<!-- Affichage de la page principale -->
+<div>
+  <RouterLink to="/"></RouterLink>
+  <RouterView/>
+</div>
+</template>
+
 <style scoped>
+
 </style>
