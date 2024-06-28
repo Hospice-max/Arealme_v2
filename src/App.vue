@@ -1,12 +1,15 @@
-<script setup>
-import StartPage from "./views/StartPage.vue";
-</script>
 
 <template>
-<StartPage></StartPage>
-<RouterView/>
+  <div>
+    <AcceuilComponent></AcceuilComponent>
+  </div>
+
 </template>
 
-<style scoped>
+<script setup>
+import AcceuilComponent from "./components/PagePrincipale.vue";
+import timeComponent from "./components/timeComponent.vue";
+</script>
 
+<style scoped>
 </style>
