@@ -1,3 +1,4 @@
+
 <script setup>
 import StartPage from "./views/StartPage.vue";
 </script>
@@ -6,6 +7,3 @@ import StartPage from "./views/StartPage.vue";
 <StartPage></StartPage>
 </template>
 
-<style scoped>
-
-</style>
