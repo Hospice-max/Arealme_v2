@@ -1,10 +1,10 @@
-<template>
-  <Formulaire></Formulaire>
-</template>
+
 
 <script setup>
-import Formulaire from "./components/Forrmulaire.vue";
+import AcceuilComponent from "./components/PagePrincipale.vue";
+import timeComponent from "./components/timeComponent.vue";
 </script>
+
 
 <style scoped>
 
