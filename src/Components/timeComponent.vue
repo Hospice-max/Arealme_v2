@@ -28,6 +28,8 @@ function name() {
    z.value=new Date().getHours();
    if(y.value<10){
     y.value="0"+y.value;
+   }
+   if(a.value<10){
     a.value="0"+a.value;
    }
      return y.value ,a.value,z.value;
