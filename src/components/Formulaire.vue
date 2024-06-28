@@ -15,7 +15,8 @@ function handleSubmit() {
   <div class="body">
     <div class="div">
       <form @submit.prevent="handleSubmit">
-        <span
+        <span 
+        class="form"
           >Bravo! Vous êtes classé n°2 ! S'il vous plaît entrez votre nom:</span
         ><br />
         <input type="text" v-model="inputValue" />
@@ -39,8 +40,11 @@ function handleSubmit() {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(53, 45, 45, 0.351);
 }
-
+.form{
+  color: black;
+}
 .div {
   text-align: center;
   border: 1px solid rgb(255, 255, 255);

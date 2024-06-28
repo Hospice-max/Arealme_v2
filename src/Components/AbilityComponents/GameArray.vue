@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, watch, reactive } from "vue";
-import Chrono from "@/components/Chrono.vue";
+import ScoreComponent from "@/components/ScoreComponent.vue";
+import TimerComponents from "@/components/TimerComponents.vue";
 
 const props = defineProps({
   countAttmpts: Number,
@@ -111,8 +112,8 @@ onMounted(() => {
   </div>
   <div v-else class="textContainer">
     <div v-if="change === true">
-      <p v-if="isRed">ATTENDEZ LE VERT🔥 <span class="blink">...</span></p>
-      <p v-else>CLICKEZ 🏃‍♂️!!!</p>
+      <p v-if="isRed">ATTENDEZ LE VERT <span class="blink">...</span></p>
+      <p v-else>MAINTENANT!</p>
       <div
         class="test_circle"
         :class="{ red: isRed, green: !isRed }"
@@ -120,14 +121,14 @@ onMounted(() => {
       ></div>
     </div>
 
-    <Chrono
+    <TimerComponents
       v-else-if="change === false"
       :childrenProps="childrenProps"
       :currentTentative="idValue"
       :gameRoundsData="gameTab"
       @response="method"
       @emitGameData="atGameEnd" 
-    /> <!-- Récupération du émit émit par (Chrono.vue) pour la moyenne du joueur -->
+    /> <!-- Récupération du émit émit par (TimerComponents.vue) pour la moyenne du joueur -->
     
   </div>
 </template>
@@ -140,14 +141,14 @@ onMounted(() => {
 }
 
 .red {
-  background-color: rgb(173, 17, 17);
-  border: 12px solid rgb(241, 231, 234);
+  background-color: rgb(230, 55, 55);
+  border: 12px solid rgb(150, 50, 78);
   cursor: pointer;
 }
 
 .green {
-  background-color: #06fb63;
-  border: 12px solid rgb(241, 231, 234);
+  background-color: #0cf264;
+  border: 12px solid rgb(35, 165, 121);
   cursor: pointer;
 }
 
@@ -172,7 +173,7 @@ onMounted(() => {
 }
 
 p {
-  color: white;
+  color: rgb(246, 242, 242);
   font-weight: bold;
   font-size: 30px;
   margin-bottom: 25px;
