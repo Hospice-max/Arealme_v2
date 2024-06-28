@@ -12,9 +12,9 @@ const starCountDown = () => { //création d'une fonction qui utilise 'setinterva
 
         }
     }, 1000);
- onMounted(() => { // IL assure que l'intervalle est nettoyé lorsque le composant est démonté, évitant ainsi des fuites de mémoire.
-    clearInterval(intervalI)
- });
+    onMounted(() => { // IL assure que l'intervalle est nettoyé lorsque le composant est démonté, évitant ainsi des fuites de mémoire.
+        clearInterval(intervalI)
+    });
 };
 
 onMounted(() => { //  il execute la fonction starCountDown lorsque le composant est monté
@@ -26,11 +26,18 @@ onMounted(() => { //  il execute la fonction starCountDown lorsque le composant 
 
 <template>
 
+    <div class="container">
+    <div class="durée">490.98 MS</div>
     <div class="circle" id="app">
-       
+
         {{ count }}
     </div>
 
+    <div class="examen">
+        EVALUATING...
+        0/0
+    </div>
+</div>
 
 </template>
 
@@ -40,7 +47,6 @@ onMounted(() => { //  il execute la fonction starCountDown lorsque le composant 
 
     border: 12px solid white;
     border-radius: 100%;
-    background-color: rgb(98, 99, 182);
     width: 400px;
     height: 400px;
     text-align: center;
@@ -50,11 +56,45 @@ onMounted(() => { //  il execute la fonction starCountDown lorsque le composant 
     font-size: 200px;
     font-weight: bolder;
     color: #fff;
+    
 
 }
 
-.circle {
+
+.durée {
+    color: #fff;
+    position: absolute;
+    top: 20%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    height: 2px;
+    font-size: 40px;
+    font-family: "Helvetica Neue", Helvetica, "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif
+}
+
+.examen {
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    bottom: 20%;
+    transform: translate(-50%, -50%);
+    height: 2px;
+    font-size: 40px;
+    font-family: "Helvetica Neue", Helvetica, "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif
+}
+
+.container{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(-45deg, #2e4b6e, #395799, #3c597a);
-  
 }
+
 </style>
