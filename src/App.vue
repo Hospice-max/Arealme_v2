@@ -1,14 +1,14 @@
 <script setup>
-import gameComponent from '@/component/gameComponent.vue';
+// import gameComponent from '@/component/gameComponent.vue';
 </script>
 
 <template>
-    <div class="container">
+    <!-- <div class="container"> -->
         <!-- <h1 class="blink">
             Tap anywhere to start
         </h1> -->
-        <gameComponent />
-    </div>
+        <!-- <gameComponent /> -->
+    <!-- </div> -->
 
 <router-view/>
 </template>
@@ -40,7 +40,7 @@ import gameComponent from '@/component/gameComponent.vue';
 
 
 
-.container {
+/* .container {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -57,7 +57,7 @@ import gameComponent from '@/component/gameComponent.vue';
     font-family: "Helvetica Neue", Helvetica, "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif
 }
 
-
+ */
 
  
 
