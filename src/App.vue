@@ -5,9 +5,6 @@ import TableauScore from "@/components/TableauScore.vue";
 </script>
 
 <template>
-</template>
-
-
 <div>
   <RouterLink to="/"></RouterLink>
   <RouterView/>

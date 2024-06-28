@@ -1,8 +1,9 @@
 <script setup>
 import { ref } from "vue";
 import starsComponentsVue from "@/components/starsComponents.vue";
+import { RouterLink } from "vue-router";
 const valeurInit=ref(1000);
-const score=ref(500)
+const score=ref(450)
 const Average=ref("")
 const titleClass = ref('title')
 const titleClas = ref('titl')
@@ -43,10 +44,18 @@ if (valeurInit.value> score.value) {
     }else{
     clearInterval(deComptId)
 };
-},10);
+},10)
+const tentative=ref(0)
+function ConfirmMessage() {
+       if (confirm("Voulez-vous Recommncer ?")) {
+        tentative.value= prompt("choisissez donc le nombre de tentative que vous souhaitez")
+        
+       }
+   }
 </script>
 
 <template>
+    <div class="white">
   <div v-if="etoile==1" :class="titleClass">
     <div class="lesSpan"><span>Your </span><span class="diff">Average Reaction Time</span><span>is</span></div>
     <div  class=" time"><span>{{valeurInit}}</span><span class="small" >ms</span> </div>
@@ -63,6 +72,12 @@ if (valeurInit.value> score.value) {
     <starsComponentsVue  class="star" :lesStars="etoile"/>
     <!-- <div class="star">{{etoile}}</div> -->
     
+  </div>
+</div>
+
+
+  <div class="more">
+     <button @click="ConfirmMessage() ">Recommencer </button> 
   </div>
 </template>
 
@@ -84,22 +99,24 @@ if (valeurInit.value> score.value) {
 
 
 .title{
-    color: white;
+    /* color: white; */
     background-color: blue;
     animation-name:moyenColor ;
     animation-duration: 6000ms;
-    /* animation-delay: infinity; */
+    animation-delay: infinit;
 }
 .titl{
-    color: white;
+    /* color: white; */
     background-color: blue;
     animation-name:hightColor ;
     animation-duration: 6000ms;
+    animation-delay: infinit;
 }
 .tit{
     background-color:maroon;
     animation-name:low ;
     animation-duration: 6000ms;
+    animation-delay: infinit;
 }
 
 
@@ -109,6 +126,9 @@ if (valeurInit.value> score.value) {
     justify-content: center;
     gap: 10px;
     padding-top: 20px;
+    font-size: 30px;
+
+    line-height: 40px;
 
 }
 .diff{
@@ -142,11 +162,23 @@ if (valeurInit.value> score.value) {
     font-size: 30px;
    
 }
+.white{
+color: white;
+}
+.white{
+color: white;
+}
+.more{
+    display: flex;
+   justify-content: right;
+   border: 1px solid black;
+   margin-left: 90%;
+   margin-top: 10px;
+   padding: 15px;
+   background-color: #545FFF;
+   height: 20px;
 
+   
+}
 
 </style>
-
-
-
-
-
