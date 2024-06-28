@@ -28,13 +28,13 @@
       </h1>
       <div class="container-button">
         <p>Tentatives:</p>
-        <button>3</button>
-        <button>5</button>
-        <button>10</button>
-        <button>15</button>
-        <button>20</button>
-        <button>💪30</button>
-        <button>😂100</button>
+        <button class="btn">3</button>
+        <button class="btn">5</button>
+        <button class="btn">10</button>
+        <button class="btn">15</button>
+        <button class="btn">20</button>
+        <button class="btn">💪30</button>
+        <button class="btn">😂100</button>
       </div>
       <p class="paragraphe">
         Si vous vous êtes déjà demandé si votre cerveau était capable de traiter
@@ -160,13 +160,21 @@ nav {
   font-weight: bold;
   opacity: 0.4;
 }
+.container-button p{
+  background-color: rgba(255, 0, 0, 0.555);
+  font-size: 25px;
+}
+.btn:hover{
+background-color: #0078e7;
+font-size: 20px;
+}
 button {
-  /* border-color: #0078e7; */
-  border: 1px solid #0078e7;
-border-radius: 5px;
-  color: black;
+  background-color: white;
+  font-size: 15px;
+  font-weight: bold;
   cursor: pointer;
 }
+
 .par {
   text-align: center;
   padding: 15px;
@@ -210,5 +218,9 @@ border-radius: 5px;
   display: flex;
   align-items: flex-end;
   margin-left: 103%;
+}
+.start:hover {
+  background-color: #0078e7;
+  font-size: 22px;
 }
 </style>
