@@ -8,7 +8,7 @@
           ><br />
           <input type="text" placeholder="ici" maxlength="20" v-model="inputValue" />
           <div class="btnDiv">
-            <button class="btn1">Confirmer</button>
+            <button  id="btnCfm"   class="btn1">Confirmer</button>
           <RouterLink class="btn2" to="/">Annuler</RouterLink>
           </div>
         </form>
@@ -17,6 +17,33 @@
   </template>
 <script setup>
 import { ref } from "vue";
+// recupération des entrés de nom//
+// let nom = ref()
+// let name = false;
+
+//ajout de l'évenement click
+let boutton = document.getElementById('btnCfm');
+function handleClick() {
+alert('Formulaire rempli!');
+}
+boutton.addEventListener('click', handleClick);
+
+
+
+  // if (name = true) {
+  //   alert("Formulaire non rempli!!")
+  // }
+  // else{
+  //   alert("Formulaire rempli!!")
+  // }
+
+
+function ctrlEntre(){
+  if (inputValue.value.length > 20) {
+    alert('Entrez juste le nom!')
+}
+};
+
 </script>
 
 <style scoped>
