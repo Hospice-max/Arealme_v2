@@ -86,28 +86,7 @@ function sendGameData(name) {
   gameSessionData.value.date = dateGenerator();
   emit("emitGameData", gameSessionData.value);
 }
-// Fonction de récupération de la date et du temps 
-function dateGenerator() {
-  let date = new Date();
-  const formatNoYear = (t) => {
-    if (t < 10) return `0${t}`;
-    return t;
-  };
-  return `${
-    formatNoYear(date.getDay()) +
-    "-" +
-    formatNoYear(date.getMonth()) +
-    "-" +
-    date.getFullYear() +
-    " " +
-    formatNoYear(date.getHours()) +
-    "h " +
-    formatNoYear(date.getMinutes()) +
-    "min " +
-    formatNoYear(date.getSeconds()) +
-    "s"
-  }`;
-}
+
 </script>
 
 <style scoped>
