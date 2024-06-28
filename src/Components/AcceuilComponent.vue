@@ -70,9 +70,11 @@ import timeComponent from "../Components/timeComponent.vue";
 </script>
 
 <style scoped>
-.high_container{
-   animation-name: animate;
-  animation-duration: 5s;
+.high_container {
+  animation-name: animate;
+  animation-duration: 2s;
+  height: 1200px;
+ 
 }
 nav {
   box-sizing: border-box;
@@ -132,10 +134,10 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   text-align: center;
   margin-top: 0px;
   background-color: rgba(24, 128, 56);
@@ -182,9 +184,9 @@ button {
   font-size: 15px;
   font-weight: bold;
   cursor: pointer;
-   transition: 0.2s;
-   padding-inline: 0.8rem;
-   padding-block: 0.5rem;
+  transition: 0.2s;
+  padding-inline: 0.8rem;
+  padding-block: 0.5rem;
 }
 
 .par {
@@ -236,18 +238,26 @@ button {
   font-size: 22px;
 }
 @keyframes animate {
-  0%   {background-color: red;}
-  25%  {background-color: yellow;}
-  50%  {background-color: blue;}
-  100% {background-color: green;}
+  0% {
+    background-color: red;
+  }
+  25% {
+    background-color: yellow;
+  }
+  50% {
+    background-color: blue;
+  }
+  100% {
+    background-color: green;
+  }
 }
 
 .btn2 {
-  margin-left: 650px;
+  margin-left: 620px;
   border: none;
   border: 1px solid #a1b9cf;
   border-radius: 20px;
-  padding: 9px;
+  padding: 5px;
   background-color: #9b9898;
 }
 </style>
