@@ -1,11 +1,9 @@
-<template>
-  <Formulaire></Formulaire>
-</template>
 
 <script setup>
-import Formulaire from "./components/Forrmulaire.vue";
+import StartPage from "./views/StartPage.vue";
 </script>
 
-<style scoped>
+<template>
+<StartPage></StartPage>
+</template>
 
-</style>
