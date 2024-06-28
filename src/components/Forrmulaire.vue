@@ -31,7 +31,7 @@ import { ref } from "vue";
   display: flex;
   justify-content: center;
   align-items: center;
-}
+};
 
 .formularDiv {
   text-align: center;
@@ -51,7 +51,7 @@ input {
   border: 1px solid gray;
   border-radius: 3px;
   margin-top: 8px;
-}
+};
 
 .buttdiv {
   margin-top: 5px;
@@ -59,7 +59,7 @@ input {
   justify-content: center;
   gap: 3%;
   padding: 8px;
-}
+};
 
 .btn1 {
   background-color: rgb(13, 110, 253);
@@ -68,7 +68,7 @@ input {
   border: none;
   border-radius: 4px;
   text-decoration: none;
-}
+};
 
 .btn2 {
   background-color: white;
@@ -77,8 +77,5 @@ input {
   border: 1px solid rgb(13, 110, 253);
   border-radius: 4px;
   text-decoration: none;
-}
-
-
-
+};
 </style>
