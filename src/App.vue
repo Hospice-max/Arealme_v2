@@ -1,16 +1,18 @@
 <script setup>
 import AcceuilComponent from "@/views/AcceuilPage.vue";
 
+import AcceuilComponent from "@/views/PagePrincipale.vue";
+import TableauScore from "@/components/TableauScore.vue";
 </script>
 
 <template>
-<!-- Affichage de la page principale -->
+</template>
+
+
 <div>
   <RouterLink to="/"></RouterLink>
   <RouterView/>
 </div>
+  <TableauScore />
 </template>
 
-<style scoped>
-
-</style>
