@@ -4,10 +4,10 @@ import TableauScore from "@/components/TableauScore.vue";
 </script>
 
 <template>
-<div>
-  <RouterLink to="/"></RouterLink>
-  <RouterView/>
-</div>
-  <TableauScore />
+<div><RouterView/></div>
 </template>
+
+<style scoped>
+
+</style>
 
