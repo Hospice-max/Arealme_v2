@@ -17,16 +17,6 @@ const router = createRouter({
       name: 'AbilityPage',
       component: AbilityPage
     },
-    {
-      path :"/StartPage",
-      name : 'StartPage' ,
-      component : StartPage, 
-    },
-    {
-      path :"/Test/:id",
-      name : 'StartPage' ,
-      component : StartPage, 
-    },
 
    {
     path :"/",

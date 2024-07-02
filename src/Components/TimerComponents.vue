@@ -84,9 +84,6 @@ function sendGameData(name) {
   gameSessionData.value.date = dateGenerator();
   emit("emitGameData", gameSessionData.value);
 }
-<<<<<<< HEAD:src/components/Chrono.vue
-
-=======
 // Fonction de récupération de la date et du temps 
 function dateGenerator() {
   let date = new Date();
@@ -109,7 +106,6 @@ function dateGenerator() {
     "s"
   }`;
 }
->>>>>>> Hospice:src/Components/TimerComponents.vue
 </script>
 
 <style scoped>
