@@ -1,8 +1,5 @@
 <template>
   <div class="timer-container">
-    <div v-show="childrenProps.id !== 1" class="chart-container">
-      <Stats :durations="durations" />
-    </div>
     <div class="big">
       <p>{{ childrenProps.green[childrenProps.id - 1] }} MS</p>
       <div class="elCenter">
@@ -22,8 +19,7 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import Formulaire from "@/components/Formulaire.vue";
-import Stats from "@/components/Stats.vue";
+import Formulaire from "./Formulaire.vue";
 
 const decompteVal = ref(3);
 const gameSessionData = ref({
