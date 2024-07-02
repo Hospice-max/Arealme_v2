@@ -1,21 +1,21 @@
-import { createRouter, createWebHistory } from "vue-router";
-import AcceuilComponent from "@/components/PagePrincipale.vue";
-import timeComponent from "@/components/timeComponent.vue";
-import StartPage from "@/views/StartPage.vue";
-
+import { createRouter, createWebHistory } from 'vue-router'
+import AcceuilPage from "@/views/AcceuilPage.vue";
+import AbilityPage from '@/views/AbilityPage.vue';
+import ErrorPage from "@/components/ErrorPage.vue";
+import scoreComponent from "@/components/ScoreComponent.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
-      name: "Acceuil",
-      component: AcceuilComponent,
-      children:{
-        path: "/",
-        name: "Acceuil",
-        component: timeComponent,
-      }
+      name: 'acceuil',
+      component: AcceuilPage
+    },
+    {
+      path: "/AbilityPage",
+      name: 'AbilityPage',
+      component: AbilityPage
     },
     {
       path :"/StartPage",
@@ -28,7 +28,30 @@ const router = createRouter({
       component : StartPage, 
     },
 
-  ],
-});
+   {
+    path :"/",
+    name : 'acceuil' ,
+    component : AcceuilPage
+    },
+    {
+      path :"/reactivityTest/:id",
+      name : 'Ability' ,
+      component : AbilityPage, 
+      props: true
+    },
+    {path :"/error",
+    name : 'Error' ,
+    component : ErrorPage
+    },
 
-export default router;
+    {
+      path :"/score",
+      name : 'Score' ,
+      component : scoreComponent
+    },
+    ]
+})
+
+
+
+export default router

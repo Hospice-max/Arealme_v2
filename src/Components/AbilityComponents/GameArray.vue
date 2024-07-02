@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, watch, reactive } from "vue";
-import Chrono from "@/components/Chrono.vue";
+import ScoreComponent from "@/components/ScoreComponent.vue";
+import TimerComponents from "@/components/TimerComponents.vue";
 
 const props = defineProps({
   countAttmpts: Number,
@@ -8,12 +9,12 @@ const props = defineProps({
 
 let time = Math.floor(Math.random() * 3000);
 const isRed = ref(true);
-let gameStart = ref(0);
-let gameEnd = ref(0);
+let startTime = ref(0);
+let endTime = ref(0);
 let badClick = ref(0);
-let task = ref(true);
+let survey = ref(true);
 let diffTime = ref(0);
-let gameTable = ref([]);
+let gameTab = ref([]);
 let idValue = ref(1);
 const childrenProps = ref({
   id: "",
@@ -35,7 +36,7 @@ const method = (param) => {
 // Réinitialisation après le décompte
 let reboot = () => {
   isRed.value = true;
-  gameEnd.value = 0;
+  endTime.value = 0;
   diffTime.value = 0;
   startGame.value = 0;
   badClick.value = 0;
@@ -45,11 +46,11 @@ function clickReact() {
   if (isRed.value === true) {
     badClick.value++;
   } else {
-    gameEnd.value = performance.now();
+    endTime.value = performance.now();
 
-    diffTime.value = (gameEnd.value - gameStart.value).toFixed(2);
+    diffTime.value = (endTime.value - startTime.value).toFixed(2);
 
-    gameTable.value.push({
+    gameTab.value.push({
       id: idValue.value,
       green: diffTime.value,
       red: badClick.value,
@@ -69,7 +70,7 @@ const startGame = () => {
 
   const timeoutId = setTimeout(() => {
     isRed.value = false;
-    gameStart.value = performance.now();
+    startTime.value = performance.now();
     if (idValue.value > newTemp) {
       clearTimeout(timeoutId);
     }
@@ -98,77 +99,63 @@ function getDatas() {
   return JSON.parse(localStorage.getItem("gamesData")) ?? [];
 }
 
-watch(() => task.value, clickReact);
+watch(() => survey.value, clickReact);
 
 onMounted(() => {
   startGame();
 });
 </script>
 
-
 <template>
-    <div class="conteneur">
-        <div v-if="change === true">
-            <p class="signal" v-if="isRed">ATTENDEZ LE VERT 😊<span class="blink">...</span></p>
-            <p class="signal" v-else>CLICKEZ  🔥!!! 🏃‍♂️ </p>
-            <p class="cercle" 
-            :class="{ red: isRed, green: !isRed }"
-            @click="task = !task">⏳</p>
-        </div>
-
-        <Chrono 
-          v-else-if="change === false"
-          :childrenProps="childrenProps"
-          :currentTentative="idValue"
-          :gameRoundsData="gameTab"
-          @response="method"
-          @emitGameData="atGameEnd"/>
-          
+  <div v-if="isScoreVisible">
+    <ScoreComponent :data="childrenProps" :tableDatas="getDatas()" />
+  </div>
+  <div v-else class="textContainer">
+    <div v-if="change === true">
+      <p v-if="isRed">ATTENDEZ LE VERT <span class="blink">...</span></p>
+      <p v-else>MAINTENANT!</p>
+      <div
+        class="test_circle"
+        :class="{ red: isRed, green: !isRed }"
+        @click="survey = !survey"
+      ></div>
     </div>
 
+    <TimerComponents
+      v-else-if="change === false"
+      :childrenProps="childrenProps"
+      :currentTentative="idValue"
+      :gameRoundsData="gameTab"
+      @response="method"
+      @emitGameData="atGameEnd" 
+    /> <!-- Récupération du émit émit par (TimerComponents.vue) pour la moyenne du joueur -->
     
+  </div>
 </template>
 
 <style scoped>
-.conteneur {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(44, 6, 79, 0.923);
-    background-size: 400% 400%;
-
+.test_circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
 }
 
-.cercle {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    border: 5px solid white;
-    text-align: center;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 70px;
-    background-color: rgba(246, 4, 52, 0.861);
-}
 .red {
-  background-color:rgba(246, 4, 52, 0.861);
-  border: 12px solid white;
+  background-color: rgb(230, 55, 55);
+  border: 12px solid rgb(150, 50, 78);
   cursor: pointer;
 }
 
 .green {
   background-color: #0cf264;
-  border: 12px solid white;
+  border: 12px solid rgb(35, 165, 121);
   cursor: pointer;
 }
+
+.textContainer {
+  text-align: center;
+}
+
 .blink {
   animation: blink 1s infinite;
 }
@@ -184,12 +171,11 @@ onMounted(() => {
     opacity: 1;
   }
 }
-.signal {
-  color: white;
+
+p {
+  color: rgb(246, 242, 242);
   font-weight: bold;
   font-size: 30px;
-  display: flex;
-  justify-content: center;
-  margin-bottom: -2rem;
+  margin-bottom: 25px;
 }
 </style>

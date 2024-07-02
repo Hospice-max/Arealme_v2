@@ -1,29 +1,27 @@
 <template>
+  <p class="milli">{{ childrenProps.green[childrenProps.id - 1] }} MS</p>
   <div class="timer-container">
     <div v-show="childrenProps.id !== 1" class="chart-container">
-      <Stats :durations="durations" />
+      <ChartComponent :durations="durations" />
     </div>
-    <div class="big">
-      <p>{{ childrenProps.green[childrenProps.id - 1] }} MS</p>
-      <div class="elCenter">
-        <div
+       <div
           v-if="childrenProps.id !== childrenProps.atTaked"
-          class="container"
-        >
+          class="container">
           <p>{{ decompteVal }}</p>
         </div>
-        <div class="texte" v-else>Evaluation...</div>
+        <div class="texte" v-else>EVALUATION...</div>
       </div>
-      <div>{{ childrenProps.id }}/{{ childrenProps.atTaked }}</div>
+     
       <Formulaire v-if="isFormVisible" @emmitGamerName="sendGameData" />
-    </div>
-  </div>
+   
+    <div class="attempt">{{ childrenProps.id }}/{{ childrenProps.atTaked }}</div>
+ 
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue";
-import Formulaire from "@/components/Formulaire.vue";
-import Stats from "@/components/Stats.vue";
+import Formulaire from "./Formulaire.vue";
+import ChartComponent from "@/components/ChartComponent.vue";
 
 const decompteVal = ref(3);
 const gameSessionData = ref({
@@ -50,7 +48,7 @@ const emit = defineEmits(["response", "emitGameData"]);
 
 function moy(element) {
   const moyScores = element.reduce((acc, cur) => acc + cur, 0);
-  return moyScores / element.length;
+  return ( moyScores / element.length);
 }
 // Fonction de décompte du chronomètre
 function deCompte() {
@@ -86,14 +84,50 @@ function sendGameData(name) {
   gameSessionData.value.date = dateGenerator();
   emit("emitGameData", gameSessionData.value);
 }
+<<<<<<< HEAD:src/components/Chrono.vue
 
+=======
+// Fonction de récupération de la date et du temps 
+function dateGenerator() {
+  let date = new Date();
+  const formatNoYear = (t) => {
+    if (t < 10) return `0${t}`;
+    return t;
+  };
+  return `${
+    formatNoYear(date.getDate()) +
+    "-" +
+    formatNoYear(date.getMonth()) +
+    "-" +
+    date.getFullYear() +
+    " " +
+    formatNoYear(date.getHours()) +
+    "h " +
+    formatNoYear(date.getMinutes()) +
+    "min " +
+    formatNoYear(date.getSeconds()) +
+    "s"
+  }`;
+}
+>>>>>>> Hospice:src/Components/TimerComponents.vue
 </script>
 
 <style scoped>
 .timer-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
-
+.milli{
+  font-size: 50px;
+  color: white;
+}
+.attempt{
+   font-size: 25px;
+   color: white;
+   padding: 30px;
+}
 .container {
   text-align: center;
   border: 20px solid rgb(241, 238, 238);
@@ -105,6 +139,7 @@ function sendGameData(name) {
   align-items: center;
   font-size: 100px;
   font-weight: bold;
+  margin-left: 25px;
 }
 
 .span {
@@ -113,8 +148,7 @@ function sendGameData(name) {
 }
 .elCenter {
   display: flex;
-  justify-content: center;
-  align-content: center;
+  justify-content: end;
 }
 .big {
   text-align: center;

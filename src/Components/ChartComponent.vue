@@ -1,13 +1,13 @@
 <template>
   <!-- <div v-if="data.tentative !== 1"> -->
-  <div v-if="true" style="width: 600px">
+  <div v-if="true" style="width: 500px">
     <canvas ref="graph"></canvas>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue";
-// import Chart from "chart.js/auto";
+import Chart from "chart.js/auto";
 
 const props = defineProps({
   durations: Array,
@@ -30,6 +30,7 @@ onMounted(() => {
       labels: ids.value,
       datasets: [
         {
+         
           label: "Progression du test en cours",
           data: props.durations,
           fill: false,
@@ -60,15 +61,25 @@ onMounted(() => {
           },
         },
       },
+      plugins: {
+            legend: {
+                display: true,
+                labels: {
+                    color: 'rgb(246, 242, 242)'
+                }
+            }
+        },
+        
     };
     const config = new Chart(ctx, {
       type: "line",
       data: dataCanvas,
       options: miseEnForme,
+      
     });
+    
   }
 });
-
 function addItems() {
   for (let i in [1, 2, 3]) {
     abscisse.value.push(Number(i));
