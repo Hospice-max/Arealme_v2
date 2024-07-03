@@ -44,12 +44,10 @@ table {
 th,
 td {
   padding: 5px;
-  border: 1px solid #000;
+  border: 3px solid rgb(2, 102, 82);
 }
 
 th {
-  background-color: rgba(128, 128, 128, 0.783);
-}
-td {
+  background-color: rgba(4, 54, 85, 0.783);
 }
 </style>

@@ -1,16 +1,12 @@
 <script setup>
-import AcceuilComponent from "@/views/AcceuilPage.vue";
-
+import AcceuilComponent from "@/views/PagePrincipale.vue";
 </script>
 
 <template>
-<!-- Affichage de la page principale -->
-<div>
-  <RouterLink to="/"></RouterLink>
-  <RouterView/>
-</div>
+<div><RouterView/></div>
 </template>
 
 <style scoped>
 
 </style>
+
