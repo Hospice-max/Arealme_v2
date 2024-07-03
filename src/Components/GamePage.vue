@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, watch, reactive } from "vue";
-import ScoreComponent from "@/components/ScoreComponent.vue";
-import TimerComponents from "@/components/TimerComponents.vue";
+import ScoreComponent from "@/components/Scores.vue";
+import TimerComponents from "@/components/Chrono.vue";
 
 const props = defineProps({
   countAttmpts: Number,
@@ -113,7 +113,7 @@ onMounted(() => {
   <div v-else class="textContainer">
     <div v-if="change === true">
       <p v-if="isRed">ATTENDEZ LE VERT <span class="blink">...</span></p>
-      <p v-else>MAINTENANT!</p>
+      <p v-else>MAINTENANT🏃‍♂️!</p>
       <div
         class="test_circle"
         :class="{ red: isRed, green: !isRed }"
@@ -141,14 +141,14 @@ onMounted(() => {
 }
 
 .red {
-  background-color: rgb(230, 55, 55);
-  border: 12px solid rgb(150, 50, 78);
+  background-color: rgb(187, 5, 5);
+  border: 12px solid rgb(247, 240, 242);
   cursor: pointer;
 }
 
 .green {
-  background-color: #0cf264;
-  border: 12px solid rgb(35, 165, 121);
+  background-color: #03b547;
+  border: 12px solid rgb(247, 240, 242);
   cursor: pointer;
 }
 

@@ -1,6 +1,5 @@
 <script setup>
-import AcceuilComponent from "@/views/AcceuilPage.vue";
-import TableauScore from "@/components/TableauScore.vue";
+import AcceuilComponent from "./views/PagePrincipale.vue";
 </script>
 
 <template>

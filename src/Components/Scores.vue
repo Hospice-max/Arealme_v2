@@ -12,7 +12,7 @@
     <StarsComponent :stars="scoreData.stars" />
   </div>
   <div class="btn-container">
-    <RouterLink to="/">Recommencer</RouterLink>
+    <RouterLink to="/">Recommencer😉</RouterLink>
   </div>
 
   <div class="table-area">
@@ -21,7 +21,7 @@
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
-import StarsComponent from "@/components/StarsComponent.vue";
+import StarsComponent from "@/components/Etoiles.vue";
 import HighscoresTableComponent from "@/components/HighscoresTableComponent.vue";
 
 const props = defineProps({
@@ -85,7 +85,7 @@ onMounted(() => {
     background-color: red;
   }
   to {
-    background-color: #877500;
+    background-color: #615c3b;
   }
 }
 
@@ -137,11 +137,11 @@ h1 {
 }
 
 .btn-container a {
-  color: #877500;
+  color: #020444;
   padding: 8px;
   margin: 12px;
   text-decoration: none;
   text-align: center;
-  background-color: #fafafa;
+  background-color: #f5f2e6;
 }
 </style>

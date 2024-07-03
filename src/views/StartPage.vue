@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from "vue";
-import GameArray from "@/components/AbilityComponents/GameArray.vue";
+import GameArray from "@/components/GamePage.vue";
 import {  useRouter, useRoute } from "vue-router";
 
 const showCircle = ref(true);
@@ -61,7 +61,7 @@ p{
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: rgb(58, 87, 139);
+  background-color: rgb(30, 12, 86);
 }
 
 .isMonted {

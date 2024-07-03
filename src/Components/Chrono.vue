@@ -9,7 +9,7 @@
           class="container">
           <p>{{ decompteVal }}</p>
         </div>
-        <div class="texte" v-else>EVALUATION...</div>
+        <div class="texte" v-else>Chargement des Statistiques...</div>
       </div>
      
       <Formulaire v-if="isFormVisible" @emmitGamerName="sendGameData" />
@@ -113,20 +113,20 @@ function dateGenerator() {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: rgb(169, 4, 21);
 }
 .milli{
   font-size: 50px;
-  color: white;
+  color: rgb(8, 239, 23);
 }
 .attempt{
    font-size: 25px;
-   color: white;
+   color: rgb(8, 239, 23);
    padding: 30px;
 }
 .container {
   text-align: center;
-  border: 20px solid rgb(241, 238, 238);
+  border: 20px solid rgb(9, 103, 202);
   height: 200px;
   width: 200px;
   border-radius: 100%;
@@ -149,11 +149,11 @@ function dateGenerator() {
 .big {
   text-align: center;
   margin: 0 auto;
-  color: white;
+  color: rgba(7, 105, 171, 0.284);
   font-size: 50px;
 }
 .texte{
-  color: white;
+  color: rgb(27, 27, 216);
   font-size: 50px ;
   
 }

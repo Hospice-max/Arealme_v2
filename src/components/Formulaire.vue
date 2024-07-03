@@ -47,8 +47,8 @@ function handleSubmit() {
 }
 .div {
   text-align: center;
-  border: 1px solid rgb(255, 255, 255);
-  background-color: rgb(255, 255, 255);
+  border: 5px solid rgb(7, 167, 124);
+  background-color: rgb(237, 235, 167);
   padding: 30px;
   border-radius: 5px;
   width: 30%;
@@ -72,7 +72,7 @@ input {
 }
 
 .btn1 {
-  background-color: rgb(13, 110, 253);
+  background-color: rgb(2, 111, 69);
   color: white;
   padding: 8px;
   border: none;
@@ -82,9 +82,9 @@ input {
 
 .btn2 {
   background-color: white;
-  color: rgb(13, 110, 253);
+  color: rgb(2, 111, 69);
   padding: 10px;
-  border: 1px solid rgb(13, 110, 253);
+  border: 1px solid rgb(253, 101, 13);
   border-radius: 4px;
   text-decoration: none;
 }

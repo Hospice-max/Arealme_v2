@@ -70,17 +70,17 @@ if (valeurInit.value> score.value) {
 
 
 @keyframes moyenColor {
-    from{ background-color: blue;}
+    from{ background-color: rgb(255, 247, 0);}
     to{background-color:aqua ;}
     
 }
 @keyframes hightColor {
-    from{ background-color: blue;}
+    from{ background-color: rgb(255, 247, 0);}
     to{background-color:red;}
 }
 @keyframes low {
-    from{ background-color: yellow;}
-    to{background-color:#545FFF;}}
+    from{ background-color: rgb(255, 106, 0);}
+    to{background-color:#313cd0;}}
 
 
 .title{
@@ -97,7 +97,7 @@ if (valeurInit.value> score.value) {
     animation-duration: 6000ms;
 }
 .tit{
-    background-color:maroon;
+    background-color:rgb(108, 98, 98);
     animation-name:low ;
     animation-duration: 6000ms;
 }
