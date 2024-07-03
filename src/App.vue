@@ -1,5 +1,5 @@
 <script setup>
-import AcceuilComponent from "./views/PagePrincipale.vue";
+import AcceuilComponent from "@/views/PagePrincipale.vue";
 </script>
 
 <template>
