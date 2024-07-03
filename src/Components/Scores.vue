@@ -14,7 +14,6 @@
   <div class="btn-container">
     <RouterLink to="/">Recommencer😉</RouterLink>
   </div>
-
   <div class="table-area">
     <HighscoresTableComponent :data="tableDatas" />
   </div>
