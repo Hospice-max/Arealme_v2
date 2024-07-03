@@ -15,9 +15,6 @@ const showCircle = ref(true);
 </template>
 
 <style scoped>
-template {
-  background-color: aqua;
-}
 
 #message {
   animation: blink 0.5s infinite;
@@ -48,7 +45,7 @@ p{
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: rgb(31, 76, 159);
+  background-color: rgb(23, 3, 102);
 }
 
 .isMonted {
